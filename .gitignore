@@ -1,0 +1,4 @@
+/.idea/
+/.vagrant/
+/public/documents/*.pdf
+/vendor/

@@ -1,0 +1,17 @@
+{
+	"name": "hollodotme/fast-cgi-client-demo",
+	"description": "This is a litte collection of example scripts to demonstrate the various usages of the FastCGI Client",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Holger Woltersdorf",
+			"email": "hw@hollo.me"
+		}
+	],
+	"require": {
+		"php": ">=7.1",
+		"hollodotme/fast-cgi-client": "^2.2.0"
+	}
+}
