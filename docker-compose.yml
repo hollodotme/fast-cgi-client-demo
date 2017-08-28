@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  php:
+    container_name: php-fpm
+    restart: "on-failure"
+    image: php:7.1-fpm
+    ports: [ "9000:9000" ]
+    volumes_from:
+      - php-worker
+    links:
+      - php-worker
+
+  composer:
+    container_name: composer
+    restart: "no"
+    image: composer:latest
+    volumes_from:
+      - php-worker
+    command: update -o -v -d /code
+
+  php-worker:
+    container_name: php-fpm-worker
+    restart: "on-failure"
+    image: php:7.1-fpm
+    ports: [ "9001:9001" ]
+    volumes:
+      - ./:/code
+      - ./env/php-fpm/7.1/workers.pool.conf:/usr/local/etc/php-fpm.d/workers.pool.conf
