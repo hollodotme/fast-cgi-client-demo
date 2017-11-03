@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4718d9849a7a142fdb72cc55ea5a9a0c",
+    "content-hash": "49a49f18838c68b598b1820079eebde8",
     "packages": [
         {
             "name": "hollodotme/fast-cgi-client",
-            "version": "v2.2.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hollodotme/fast-cgi-client.git",
-                "reference": "2d42a803ccec53831ad2645bf31dc264d4bd7182"
+                "reference": "83fd65c7bf0a806a4b16be5962f03815ecaff33f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hollodotme/fast-cgi-client/zipball/2d42a803ccec53831ad2645bf31dc264d4bd7182",
-                "reference": "2d42a803ccec53831ad2645bf31dc264d4bd7182",
+                "url": "https://api.github.com/repos/hollodotme/fast-cgi-client/zipball/83fd65c7bf0a806a4b16be5962f03815ecaff33f",
+                "reference": "83fd65c7bf0a806a4b16be5962f03815ecaff33f",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
             "extra": {
                 "tools": {
                     "phpunit": {
-                        "url": "https://phar.phpunit.de/phpunit-6.1.0.phar",
+                        "url": "https://phar.phpunit.de/phpunit-6.3.1.phar",
                         "only-dev": true
                     },
                     "coveralls": {
@@ -41,7 +41,7 @@
                         "only-dev": true
                     },
                     "phpmetrics": {
-                        "url": "https://github.com/phpmetrics/PhpMetrics/releases/download/v2.1.0/phpmetrics.phar",
+                        "url": "https://github.com/phpmetrics/PhpMetrics/releases/download/v2.3.0/phpmetrics.phar",
                         "only-dev": true
                     }
                 }
@@ -67,10 +67,90 @@
                 "fastcgi",
                 "php-fpm"
             ],
-            "time": "2017-04-15T18:50:30+00:00"
+            "time": "2017-09-28T19:57:46+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "tm/tooly-composer-script",
+            "version": "1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tommy-muehle/tooly-composer-script.git",
+                "reference": "d75cf732edc3a807df47b0c16cb34ca993b420c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tommy-muehle/tooly-composer-script/zipball/d75cf732edc3a807df47b0c16cb34ca993b420c8",
+                "reference": "d75cf732edc3a807df47b0c16cb34ca993b420c8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "composer/composer": "1.*",
+                "mikey179/vfsstream": "1.6.*",
+                "php-mock/php-mock-phpunit": "1.1.*",
+                "tm/gpg-verifier": "1.*"
+            },
+            "suggest": {
+                "tm/gpg-verifier": "Allows verification over GPG for PHAR tools."
+            },
+            "type": "library",
+            "extra": {
+                "tools": {
+                    "phpunit": {
+                        "url": "https://phar.phpunit.de/phpunit-5.5.0.phar"
+                    },
+                    "phpcpd": {
+                        "url": "https://phar.phpunit.de/phpcpd-2.0.4.phar"
+                    },
+                    "phpcs": {
+                        "url": "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar",
+                        "force-replace": true
+                    },
+                    "phpmd": {
+                        "url": "http://static.phpmd.org/php/latest/phpmd.phar",
+                        "force-replace": true
+                    },
+                    "security-checker": {
+                        "url": "http://get.sensiolabs.org/security-checker.phar",
+                        "force-replace": true
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tooly\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tommy Muehle",
+                    "email": "tommy.muehle@gmail.com",
+                    "homepage": "https://tommy-muehle.de"
+                }
+            ],
+            "description": "Simple composer script to manage phar files.",
+            "homepage": "https://github.com/tommy-muehle/tooly-composer-script",
+            "keywords": [
+                "composer",
+                "composer-phar",
+                "composer-script",
+                "gpg-verification",
+                "phar",
+                "phar-handling",
+                "phar-management"
+            ],
+            "time": "2017-07-21T20:16:48+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],

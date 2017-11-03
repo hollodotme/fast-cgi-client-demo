@@ -2,3 +2,4 @@
 /.vagrant/
 /public/documents/*.pdf
 /vendor/
+/build/logs/*
