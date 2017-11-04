@@ -1,7 +1,7 @@
-# Fast CGI Client - DEMO
+# Fast CGI Client Demo
 
-This is a litte collection of example scripts to demonstrate the various usages of the FastCGI Client 
-that can be found here: **[hollodotme/fast-cgi-client](https://github.com/hollodotme/fast-cgi-client)**
+This is a tiny demo application to show the basic concept of using PHP-FPM background workers with 
+**[hollodotme/fast-cgi-client](https://github.com/hollodotme/fast-cgi-client)**
 
 Please visit the project site for further documentation.
 
@@ -12,19 +12,28 @@ Please visit the project site for further documentation.
 #### On host machine
 
 ```bash
+# Make folders writable for vagrant
+chmod -R 0777 build/logs public/documents
+
+# Start the vagrant box
+# The provisioning can take a little while
 vagrant up
 
+# Log into vagrant box
 vagrant ssh
 ```
 
 #### On guest machine
 
 ```bash
+# Go to project dir
 cd /vagrant
 
+# Update composer
 sudo composer self-update
 
+# Install dependencies
 composer update -o -v
 ```
 
-Visit http://demo.fast-cgi-client.de in Browser and click the demo scripts.
+Browse to http://demo.fast-cgi-client.de
