@@ -3,39 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>DEMO</title>
+	<link rel="stylesheet" type="text/css" href="/css/theme.css">
 </head>
 <body>
 
-<h1>Demos</h1>
+<div id="left">
+	<div class="buttons">
+		Create:
+		<button type="button" id="single">Single PDF</button>
+		<button type="button" id="multipleOrdered">Multiple PDF (ordered)</button>
+		<button type="button" id="multipleResponsive">Multiple PDF (reactive)</button>
+	</div>
 
-<h2>Synchronous</h2>
+	<hr>
 
-<ul>
-	<li>
-		<a href="/sync/createSinglePdf.php" target="_blank">Create single PDF</a>
-	</li>
-</ul>
+	<div id="output"></div>
+
+</div>
+<div id="right">
+	<div id="processes"></div>
+</div>
 
 
-<h2>Asynchronous</h2>
-
-<ul>
-	<li>
-		<a href="/async/createSinglePdfFireAndForget.php" target="_blank">Create single PDF - Fire and forget</a>
-	</li>
-	<li>
-		<a href="/async/createSinglePdfWithResponse.php" target="_blank">Create single PDF - Waiting for response</a>
-	</li>
-	<li>
-		<a href="/async/createMultiPdfsInParallelFireAndForget.php" target="_blank">Create multiple PDF - Fire and forget</a>
-	</li>
-	<li>
-		<a href="/async/createMultiPdfsInParallelOrdered.php" target="_blank">Create multiple PDF - Ordered by requests</a>
-	</li>
-	<li>
-		<a href="/async/createMultiPdfsInParallelReactive.php" target="_blank">Create multiple PDF - Reactive</a>
-	</li>
-</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/theme.js"></script>
 
 </body>
 </html>

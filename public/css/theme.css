@@ -1,0 +1,76 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+}
+
+#left {
+    position: fixed;
+    width: 60%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+#left button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    color: #FFFFFF;
+    background-color: crimson;
+    border: 1px solid crimson;
+    border-radius: 5px;
+}
+
+#left button:hover {
+    background-color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#left hr {
+    border: 0;
+    border-top: 4px solid black;
+    height: 1px;
+    background-color: transparent;
+}
+
+#right {
+    position: fixed;
+    width: 40%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: black;
+}
+
+#processes {
+    background-color: black;
+    color: white;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 22px;
+    white-space: pre;
+    padding: 10px;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    bottom: 20px;
+    width: 37%;
+    overflow-y: auto;
+}
+
+#output {
+    background-color: white;
+    color: black;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 22px;
+    white-space: pre;
+    padding: 10px;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    bottom: 20px;
+    width: 50%;
+    overflow-y: auto;
+}
