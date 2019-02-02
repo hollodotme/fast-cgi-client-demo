@@ -16,7 +16,7 @@ file_put_contents( $tempFile, $htmlContent );
 chmod( $tempFile, 0777 );
 
 $command = sprintf(
-	'xvfb-run wkhtmltopdf %s %s',
+	'xvfb-run wkhtmltopdf -q %s %s',
 	escapeshellarg( 'file://' . $tempFile ),
 	escapeshellarg( $outputFile )
 );
