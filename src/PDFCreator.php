@@ -1,34 +1,25 @@
 <?php declare(strict_types=1);
-/**
- * @author  hollodotme
- * @license MIT (See LICENSE file)
- */
 
 namespace hollodotme\FastCGI\ClientDemo;
 
 use hollodotme\FastCGI\Client;
 use hollodotme\FastCGI\ClientDemo\Responses\EventSourceStream;
+use hollodotme\FastCGI\Interfaces\ConfiguresSocketConnection;
 use hollodotme\FastCGI\Interfaces\ProvidesResponseData;
 use hollodotme\FastCGI\Requests\PostRequest;
 
-/**
- * Class PDFCreator
- * @package hollodotme\FastCGI\ClientDemo
- */
 final class PDFCreator
 {
-	private const WORKER_SCRIPT = '/vagrant/bin/createPDF.php';
+	private const WORKER_SCRIPT = '/repo/bin/createPDF.php';
 
-	/** @var Client */
-	private $client;
+	private Client $client;
 
-	/** @var EventSourceStream */
-	private $responseStream;
-
-	public function __construct( Client $client, EventSourceStream $responseStream )
+	public function __construct(
+		private ConfiguresSocketConnection $connection,
+		private EventSourceStream $responseStream
+	)
 	{
-		$this->client         = $client;
-		$this->responseStream = $responseStream;
+		$this->client = new Client();
 	}
 
 	public function single() : void

@@ -1,8 +1,8 @@
 $(document).ready(function () {
     if (!!window.EventSource) {
-        var logOutput = $('#processes');
+        const logOutput = $('#processes');
         logOutput.text('');
-        var source = new EventSource('/showProcesses.php');
+        const source = new EventSource('/showProcesses.php');
 
         source.addEventListener('beginOfStream', function () {
             logOutput.append("Stream started.\n");
@@ -17,6 +17,7 @@ $(document).ready(function () {
         }, false);
 
         source.addEventListener('message', function (e) {
+            console.dir(e);
             logOutput.append(e.data + "\n");
         }, false);
 
@@ -31,18 +32,19 @@ $(document).ready(function () {
                 source.close();
             }
         }, false);
-    }
-    else {
+    } else {
         alert('No event source available. Please use another, modern browser!');
     }
 
     $('#left').find('button').click(function (e) {
         e.preventDefault();
-        var callMethod = $(this).attr('id');
+        let connection = $('#connection').val();
+        console.dir(connection);
+        let callMethod = $(this).attr('id');
         if (!!window.EventSource) {
-            var output = $('#output');
+            const output = $('#output');
             output.text('');
-            var es = new EventSource('/createPDFs.php?callMethod=' + callMethod);
+            let es = new EventSource('/createPDFs.php?callMethod=' + callMethod + '&connection=' + connection);
 
             es.addEventListener('beginOfStream', function () {
                 output.append("Stream started.\n");
@@ -69,8 +71,7 @@ $(document).ready(function () {
                     es.close();
                 }
             }, false);
-        }
-        else {
+        } else {
             alert('No event source available. Please use another, modern browser!');
         }
     });

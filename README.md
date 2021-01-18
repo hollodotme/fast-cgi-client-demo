@@ -5,35 +5,8 @@ This is a tiny demo application to show the basic concept of using PHP-FPM backg
 
 Please visit the project site for further documentation.
 
-## Running the demos:
-
-### Get environment up and running
-
-#### On host machine
+## Running the demos
 
 ```bash
-# Make folders writable for vagrant
-chmod -R 0777 build/logs public/documents
-
-# Start the vagrant box
-# The provisioning can take a little while
-vagrant up
-
-# Log into vagrant box
-vagrant ssh
+make up
 ```
-
-#### On guest machine
-
-```bash
-# Go to project dir
-cd /vagrant
-
-# Update composer
-sudo composer self-update
-
-# Install dependencies
-composer update -o -v
-```
-
-Browse to http://demo.fast-cgi-client.de

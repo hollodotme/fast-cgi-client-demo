@@ -1,44 +1,27 @@
 {
-  "name": "hollodotme/fast-cgi-client-demo",
-  "description": "This is a litte collection of example scripts to demonstrate the various usages of the FastCGI Client",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Holger Woltersdorf",
-      "email": "hw@hollo.me"
+    "name": "hollodotme/fast-cgi-client-demo",
+    "description": "This is a litte collection of example scripts to demonstrate the various usages of the FastCGI Client",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Holger Woltersdorf",
+            "email": "freelance@hollo.me"
+        }
+    ],
+    "require": {
+        "php": "8.0.*",
+        "hollodotme/fast-cgi-client": "^v3.1.5",
+        "tecnickcom/tcpdf": "^6.3.5",
+        "sensiolabs/ansi-to-html": "^v1.2.1"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "hollodotme\\FastCGI\\ClientDemo\\": "src/"
+        }
     }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "hollodotme/fast-cgi-client": "^2.5.0",
-    "sensiolabs/ansi-to-html": "^1.1.3",
-    "roave/security-advisories": "dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "hollodotme\\FastCGI\\ClientDemo\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "hollodotme\\FastCGI\\ClientDemo\\Tests\\": "tests/"
-    }
-  },
-  "require-dev": {
-    "tm/tooly-composer-script": "^1.0"
-  },
-  "scripts": {
-    "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
-    "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
-  },
-  "extra": {
-    "tools": {
-      "phpunit": {
-        "url": "https://phar.phpunit.de/phpunit-6.4.3.phar",
-        "only-dev": true
-      }
-    }
-  }
 }

@@ -1,37 +1,32 @@
 <?php declare(strict_types=1);
-/**
- * @author hollodotme
- */
 
 namespace hollodotme\FastCGI\ClientDemo\Responses;
 
 use hollodotme\FastCGI\ClientDemo\Exceptions\LogicException;
 use SensioLabs\AnsiConverter\AnsiToHtmlConverter;
 
-/**
- * Class EventSourceStream
- * @package hollodotme\FastCGI\ClientDemo\Responses
- */
 final class EventSourceStream
 {
 	private const BEGIN_OF_STREAM_EVENT = 'beginOfStream';
 
 	private const END_OF_STREAM_EVENT   = 'endOfStream';
 
-	/** @var int */
-	private $eventSequence = 0;
+	private int $eventSequence = 0;
 
-	/** @var bool */
-	private $active = false;
+	private bool $active = false;
 
-	/** @var AnsiToHtmlConverter */
-	private $ansiToHtmlConverter;
+	private AnsiToHtmlConverter $ansiToHtmlConverter;
 
 	public function __construct()
 	{
 		$this->ansiToHtmlConverter = new AnsiToHtmlConverter( new AnsiTheme() );
 	}
 
+	/**
+	 * @param bool $flushBuffer
+	 *
+	 * @throws LogicException
+	 */
 	public function beginStream( bool $flushBuffer = true ) : void
 	{
 		$this->active = true;
@@ -44,16 +39,22 @@ final class EventSourceStream
 			@ob_end_clean();
 		}
 
-		@ob_implicit_flush( 1 );
+		@ob_implicit_flush( true );
 
 		$this->streamEvent( '', self::BEGIN_OF_STREAM_EVENT );
 	}
 
+	/**
+	 * @param string      $data
+	 * @param string|null $eventName
+	 *
+	 * @throws LogicException
+	 */
 	public function streamEvent( string $data, ?string $eventName = null ) : void
 	{
 		$this->guardStreamIsActive();
 
-		if ( false !== strpos( $data, PHP_EOL ) )
+		if ( str_contains( $data, PHP_EOL ) )
 		{
 			foreach ( explode( PHP_EOL, $data ) as $line )
 			{
@@ -66,14 +67,17 @@ final class EventSourceStream
 		echo 'id: ' . ++$this->eventSequence . PHP_EOL;
 		echo (null !== $eventName) ? ('event: ' . $eventName . PHP_EOL) : '';
 
-		if ( false !== strpos( $data, "\e[" ) )
+		if ( str_contains( $data, "\e[" ) )
 		{
-			$data = $this->ansiToHtmlConverter->convert( $data );
+			$data = (string)$this->ansiToHtmlConverter->convert( $data );
 		}
 
 		echo 'data: ' . $data . PHP_EOL . PHP_EOL;
 	}
 
+	/**
+	 * @throws LogicException
+	 */
 	private function guardStreamIsActive() : void
 	{
 		if ( !$this->active )
@@ -82,6 +86,9 @@ final class EventSourceStream
 		}
 	}
 
+	/**
+	 * @throws LogicException
+	 */
 	public function endStream() : void
 	{
 		$this->guardStreamIsActive();

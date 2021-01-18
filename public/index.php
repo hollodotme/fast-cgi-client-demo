@@ -9,6 +9,13 @@
 
 <div id="left">
 	<div class="buttons">
+		Connection:
+		<select id="connection">
+			<option value="network-socket">Network socket (tcp://web:9001)</option>
+			<option value="unix-domain-socket">Unix domain socket (/socket/php-uds.sock)</option>
+		</select>
+		<br>
+		<br>
 		Create:
 		<button type="button" id="single">Single PDF</button>
 		<button type="button" id="multipleOrdered">Multiple PDF (ordered)</button>
@@ -23,7 +30,6 @@
 <div id="right">
 	<div id="processes"></div>
 </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/theme.js"></script>
