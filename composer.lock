@@ -204,12 +204,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5688b64287a502c56061ab3f400f05e190d5fa5a"
+                "reference": "fe0752ad377d3167e7419a7fb2d4924af9858c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5688b64287a502c56061ab3f400f05e190d5fa5a",
-                "reference": "5688b64287a502c56061ab3f400f05e190d5fa5a",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fe0752ad377d3167e7419a7fb2d4924af9858c69",
+                "reference": "fe0752ad377d3167e7419a7fb2d4924af9858c69",
                 "shasum": ""
             },
             "conflict": {
@@ -337,7 +337,7 @@
                 "paragonie/random_compat": "<2",
                 "passbolt/passbolt_api": "<2.11",
                 "paypal/merchant-sdk-php": "<3.12",
-                "pear/archive_tar": "<1.4.11",
+                "pear/archive_tar": "<1.4.12",
                 "personnummer/personnummer": "<3.0.2",
                 "phpfastcache/phpfastcache": ">=5,<5.0.13",
                 "phpmailer/phpmailer": "<6.1.6",
@@ -518,7 +518,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-18T19:42:28+00:00"
+            "time": "2021-01-19T06:26:43+00:00"
         }
     ],
     "aliases": [],
