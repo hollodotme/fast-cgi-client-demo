@@ -19,25 +19,12 @@ services:
       - fcgidemo
 
   web:
-    image: library/php:8.0-fpm-alpine
-    restart: 'on-failure'
-    depends_on:
-      - worker
-    volumes:
-      - ./:/repo
-      - worker-unix-domain-socket:/socket
-    working_dir: /repo
-    networks:
-      - fcgidemo
-
-  worker:
     build:
-      context: ./.docker/php/worker
+      context: ./.docker/php/web
       dockerfile: Dockerfile
     restart: 'on-failure'
     volumes:
       - ./:/repo
-      - worker-unix-domain-socket:/socket
     working_dir: /repo
     networks:
       - fcgidemo
@@ -56,11 +43,3 @@ networks:
     external:
       name: "gateway"
   fcgidemo:
-
-volumes:
-  worker-unix-domain-socket:
-    driver: local
-    driver_opts:
-      type: tmpfs
-      device: tmpfs
-      o: size=10m
