@@ -74,7 +74,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#connection').change(function () {
+    $('#pool').change(function () {
         $('div[id^="pool-"]').hide();
         let poolName = $(this).val();
         $('#pool-' + poolName).show();
