@@ -1,0 +1,113 @@
+<?php
+/**
+ * @var stdClass $context
+ */
+
+?>
+<style>
+    th {
+        font-weight: bold;
+    }
+
+    .btop th {
+        border-top: 2px solid #000000;
+    }
+
+    .bbottom th {
+        border-bottom: 2px solid #000000;
+    }
+
+    .alt td {
+        background-color: #f6f6f6;
+    }
+</style>
+
+<table cellpadding="4" cellspacing="2" width="100%">
+	<tr>
+		<td width="70%">
+			<b>Holger Woltersdorf</b><br/>
+			freelance@hollo.me<br/>
+			https://hollo.me<br/>
+		</td>
+		<td width="30%">
+			<img src="http://nginx/img/HW_mono.jpg" width="100">
+		</td>
+	</tr>
+</table>
+
+<h1 class="title">Invoice #<?= $context->invoiceId ?></h1>
+<b>Date: <?= date( 'r' ) ?></b>
+<p>
+	Thank you for watching my talk, I hope you enjoy it!
+</p>
+
+<h3>
+	This invoice is for demonstration only.
+</h3>
+
+<table cellpadding="4" cellspacing="2" width="100%">
+	<thead>
+	<tr class="bbottom">
+		<th width="50">Pos</th>
+		<th width="200">Name</th>
+		<th width="140">Price</th>
+		<th width="50">Qty</th>
+		<th width="140" align="right">Subtotal</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td width="50">1.</td>
+		<td width="200">FastCGI 101</td>
+		<td width="140">0.00 &euro;</td>
+		<td width="50">1</td>
+		<td width="140" align="right">0.00 &euro;</td>
+	</tr>
+	<tr class="alt">
+		<td width="50">2.</td>
+		<td width="200">PHP-FPM &amp; pool configuration</td>
+		<td width="140">0.00 &euro;</td>
+		<td width="50">3</td>
+		<td width="140" align="right">0.00 &euro;</td>
+	</tr>
+	<tr>
+		<td width="50">3.</td>
+		<td width="200">FastCGI Client history</td>
+		<td width="140">0.00 &euro;</td>
+		<td width="50">1</td>
+		<td width="140" align="right">0.00 &euro;</td>
+	</tr>
+	<tr class="alt">
+		<td width="50">4.</td>
+		<td width="200">FastCGI Client demo</td>
+		<td width="140">0.00 &euro;</td>
+		<td width="50">1</td>
+		<td width="140" align="right">0.00 &euro;</td>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr class="btop">
+		<th colspan="3">Grand total</th>
+		<th>6</th>
+		<th align="right">0.00 &euro;</th>
+	</tr>
+	</tfoot>
+</table>
+
+<br>
+<br>
+
+<h2>Pay (attention) within 45 Minutes.</h2>
+
+<p>
+	Thank you!
+</p>
+<p>
+	Best regards.
+</p>
+<p>
+	<img src="http://nginx/img/Sign.jpg" width="250">
+</p>
+<p>
+	<small>Holger Woltersdorf</small>
+</p>

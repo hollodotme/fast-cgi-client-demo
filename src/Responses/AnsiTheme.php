@@ -1,23 +1,16 @@
 <?php declare(strict_types=1);
-/**
- * @author hollodotme
- */
 
 namespace hollodotme\FastCGI\ClientDemo\Responses;
 
 use SensioLabs\AnsiConverter\Theme\Theme;
 
-/**
- * Class AnsiTheme
- * @package hollodotme\FastCGI\ClientDemo\Responses
- */
 final class AnsiTheme extends Theme
 {
 	public function asArray() : array
 	{
 		return [
 			// normal
-			'black'     => '#2e3436',
+			'black'     => '#000000',
 			'red'       => '#e5493d',
 			'green'     => '#4a944a',
 			'yellow'    => '#d58512',

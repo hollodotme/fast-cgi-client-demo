@@ -39,7 +39,7 @@ final class EventSourceStream
 			@ob_end_clean();
 		}
 
-		@ob_implicit_flush( true );
+		@ob_implicit_flush( $this->active );
 
 		$this->streamEvent( '', self::BEGIN_OF_STREAM_EVENT );
 	}
@@ -97,6 +97,6 @@ final class EventSourceStream
 
 		$this->active = false;
 
-		@ob_implicit_flush( 0 );
+		@ob_implicit_flush( $this->active );
 	}
 }

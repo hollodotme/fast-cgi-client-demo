@@ -17,7 +17,6 @@ $(document).ready(function () {
         }, false);
 
         source.addEventListener('message', function (e) {
-            console.dir(e);
             logOutput.append(e.data + "\n");
         }, false);
 
@@ -38,16 +37,15 @@ $(document).ready(function () {
 
     $('#left').find('button').click(function (e) {
         e.preventDefault();
-        let connection = $('#connection').val();
-        console.dir(connection);
-        let callMethod = $(this).attr('id');
+        let pool = $('#pool').val();
+        let create = $(this).attr('id');
         if (!!window.EventSource) {
             const output = $('#output');
             output.text('');
-            let es = new EventSource('/createPDFs.php?callMethod=' + callMethod + '&connection=' + connection);
+            let es = new EventSource('/createInvoices.php?create=' + create + '&pool=' + pool);
 
             es.addEventListener('beginOfStream', function () {
-                output.append("Stream started.\n");
+                output.append("\n");
             }, false);
 
             es.addEventListener('open', function () {
@@ -60,7 +58,7 @@ $(document).ready(function () {
             }, false);
 
             es.addEventListener('endOfStream', function () {
-                output.append("Stream ended.\n");
+                output.append("Done.\n\n");
                 output.scrollTop(9999999);
                 es.close();
             }, false);
@@ -74,5 +72,11 @@ $(document).ready(function () {
         } else {
             alert('No event source available. Please use another, modern browser!');
         }
+    });
+
+    $('#connection').change(function () {
+        $('div[id^="pool-"]').hide();
+        let poolName = $(this).val();
+        $('#pool-' + poolName).show();
     });
 });

@@ -7,32 +7,21 @@
 </head>
 <body>
 
+<div id="header">
+	<h1>FastCGI Client Demos</h1>
+</div>
+
 <div id="left">
-	<div class="buttons">
-		Connection:
-		<select id="connection">
-			<option value="network-socket">Network socket (tcp://web:9001)</option>
-			<option value="unix-domain-socket">Unix domain socket (/socket/php-uds.sock)</option>
-		</select>
-		<br>
-		<br>
-		Create:
-		<button type="button" id="single">Single PDF</button>
-		<button type="button" id="multipleOrdered">Multiple PDF (ordered)</button>
-		<button type="button" id="multipleResponsive">Multiple PDF (reactive)</button>
-	</div>
-
-	<hr>
-
-	<div id="output"></div>
-
+	<ul>
+		<li>
+			<a href="/pools">PHP-FPM Pools</a>
+		</li>
+	</ul>
 </div>
+
 <div id="right">
-	<div id="processes"></div>
+	<div id="processes"><h1><~ Choose examples on the left</h1></div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/theme.js"></script>
 
 </body>
 </html>

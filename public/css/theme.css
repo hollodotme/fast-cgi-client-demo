@@ -3,10 +3,36 @@ body {
     font-size: 22px;
 }
 
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #202020;
+    color: #f6f6f6;
+}
+
+h1 {
+    margin: 0;
+    padding: 5px;
+    font-size: 30px;
+}
+
+#header a {
+    text-decoration: none;
+    color: #f6f6f6;
+}
+
+#header a:hover {
+    text-decoration: underline;
+}
+
 #left {
     position: fixed;
     width: 60%;
-    top: 0;
+    top: 70px;
     left: 0;
     bottom: 0;
     padding: 20px;
@@ -17,9 +43,10 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 22px;
     color: #FFFFFF;
-    background-color: crimson;
-    border: 1px solid crimson;
-    border-radius: 5px;
+    background-color: #e5493d;
+    border: 1px solid #e5493d;
+    padding: 2px 8px;
+
 }
 
 #left button:hover {
@@ -28,21 +55,43 @@ body {
     cursor: pointer;
 }
 
-#left hr {
-    border: 0;
-    border-top: 4px solid black;
-    height: 1px;
-    background-color: transparent;
-}
-
 #right {
     position: fixed;
     width: 40%;
-    top: 0;
+    top: 70px;
     right: 0;
     bottom: 0;
     padding: 20px;
     background-color: black;
+}
+
+#pools {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 40%;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: #f6f6f6;
+    color: #202020;
+    font-size: 22px;
+    height: 300px;
+}
+
+#pools > div {
+    white-space: pre;
+    padding: 10px;
+}
+
+#pool-www-network-socket {
+    display: block;
+}
+
+#pool-static-network-socket {
+    display: none;
+}
+
+#pool-on-demand-unix-socket {
+    display: none;
 }
 
 #processes {
@@ -53,14 +102,15 @@ body {
     white-space: pre;
     padding: 10px;
     position: fixed;
-    top: 80px;
+    top: 430px;
     right: 20px;
     bottom: 20px;
-    width: 37%;
+    width: 39%;
     overflow-y: auto;
 }
 
 #output {
+    border: 4px solid #202020;
     background-color: white;
     color: black;
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -68,9 +118,16 @@ body {
     white-space: pre;
     padding: 10px;
     position: fixed;
-    top: 120px;
+    top: 197px;
     left: 20px;
     bottom: 20px;
     width: 50%;
     overflow-y: auto;
+}
+
+select {
+    border: 1px solid #202020;
+    color: #505050;
+    background-color: #f6f6f6;
+    font-size: 22px;
 }
