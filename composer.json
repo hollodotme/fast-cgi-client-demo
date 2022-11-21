@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "php": "8.0.*",
-        "hollodotme/fast-cgi-client": "^v3.1.5",
+        "php": "8.1.*",
+        "hollodotme/fast-cgi-client": "^v3.1.7",
         "tecnickcom/tcpdf": "^6.3.5",
         "sensiolabs/ansi-to-html": "^v1.2.1"
     },
